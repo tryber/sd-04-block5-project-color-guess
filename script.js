@@ -7,7 +7,6 @@ const placar = document.getElementById('score');
 let colorsArray = [];
 let rightColor = '';
 let score = 0;
-let click = false;
 
 function generateColors() {
   const arr = [];
@@ -19,7 +18,7 @@ function generateColors() {
     a = Math.floor(Math.random() * 255);
     b = Math.floor(Math.random() * 255);
     c = Math.floor(Math.random() * 255);
-    str = `rgb( ${String(a)} , ${String(b)} , ${String(c)} )`;
+    str = `rgb(${String(a)}, ${String(b)}, ${String(c)})`;
     arr.push(str);
   }
   return arr;
@@ -32,12 +31,11 @@ function chooseRight(arr) {
 
 function verifyAnswer() {
   const tentativa = event.target.style.backgroundColor;
-  if (tentativa === rightColor && click === false) {
-    click = true;
+  if (tentativa === rightColor) {
     answer.innerHTML = 'Acertou!';
     score += 3;
     placar.innerHTML = score;
-  } else if (click === false) {
+  } else {
     answer.innerHTML = 'Errou! Tente novamente';
     answer.style.color = 'black';
   }
