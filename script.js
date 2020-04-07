@@ -41,7 +41,7 @@ function chooseRight(arr){
 function verifyAnswer(){
   const tentativa = event.target.style.backgroundColor;
   if(tentativa===rightColor) {
-    answer.innerHTML='Correto!';
+    answer.innerHTML='Acertou!';
   }
   else {
     answer.innerHTML='Errou! Tente novamente';
