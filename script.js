@@ -53,7 +53,6 @@ function init() {
   colorsArray = generateColors();
   rightColor = chooseRight(colorsArray);
   answer.innerHTML = 'Escolha uma cor';
-  click = false;
   render();
 }
 
