@@ -1,19 +1,19 @@
 .title {
-  text-align: center;
-  font-weight: bold;
   font-size: 64px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .rgb-color {
-  text-align: center;
-  font-weight: bolder;
   font-size: 48px;
+  font-weight: 800;
+  text-align: center;
 }
 
 .answer {
-  text-align: center;
   font-size: 36px;
-  font-weight: bolder;
+  font-weight: 800;
+  text-align: center;
 }
 
 .balls {
@@ -22,15 +22,14 @@
 }
 
 .ball {
-  display: inline-block;
   border-radius: 50%;
-  width: 100px;
+  display: inline-block;
   height: 100px;
   margin: 0 10px;
+  width: 100px;
 }
 
 .button-content {
   display: flex;
   justify-content: center;
 }
-

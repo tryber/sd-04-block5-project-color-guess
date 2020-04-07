@@ -1,7 +1,7 @@
 const balls = document.getElementsByClassName('ball');
 const color = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
-const button = document.getElementById('restart');
+const button = document.getElementById('reset-game');
 
 let colorsArray = [];
 let rightColor = '';
@@ -44,7 +44,7 @@ function verifyAnswer(){
     answer.innerHTML='Correto!';
   }
   else {
-    answer.innerHTML='Resposta errada! Tente novamente';
+    answer.innerHTML='Errou! Tente novamente';
     answer.style.color='black';
   }
 }
