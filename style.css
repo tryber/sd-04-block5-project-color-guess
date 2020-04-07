@@ -1,0 +1,36 @@
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 64px;
+}
+
+.rgb-color {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 48px;
+}
+
+.answer {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.balls {
+  display: flex;
+  justify-content: center;
+}
+
+.ball {
+  display: inline-block;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+}
+
+.button-content {
+  display: flex;
+  justify-content: center;
+}
+
