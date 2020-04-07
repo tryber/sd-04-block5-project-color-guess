@@ -9,21 +9,6 @@ let rightColor = '';
 let score = 0;
 let click = false;
 
-window.onload = function () {
-  colorsArray = generateColors();
-  rightColor = chooseRight(colorsArray);
-  answer.innerHTML = 'Escolha uma cor';
-  click = false;
-  render();
-};
-button.addEventListener('click', () => {
-  colorsArray = generateColors();
-  rightColor = chooseRight(colorsArray);
-  answer.innerHTML = 'Escolha uma cor';
-  click = false;
-  render();
-});
-
 function generateColors() {
   const arr = [];
   let a = 0;
@@ -34,7 +19,7 @@ function generateColors() {
     a = Math.floor(Math.random() * 255);
     b = Math.floor(Math.random() * 255);
     c = Math.floor(Math.random() * 255);
-    str = 'rgb(' + String(a) + ', ' + String(b) + ', ' + String(c) + ')';
+    str = `rgb( ${String(a)} , ${String(b)} , ${String(c)} )`;
     arr.push(str);
   }
   return arr;
@@ -65,3 +50,18 @@ function render() {
     balls[i].addEventListener('click', verifyAnswer);
   }
 }
+
+function init() {
+  colorsArray = generateColors();
+  rightColor = chooseRight(colorsArray);
+  answer.innerHTML = 'Escolha uma cor';
+  click = false;
+  render();
+}
+
+window.onload = function () {
+  init();
+};
+button.addEventListener('click', () => {
+  init();
+});
