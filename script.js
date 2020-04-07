@@ -2,20 +2,25 @@ const balls = document.getElementsByClassName('ball');
 const color = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
 const button = document.getElementById('reset-game');
+const placar = document.getElementById('score');
 
 let colorsArray = [];
 let rightColor = '';
+let score=0;
+let click=false;
 
 window.onload = function () {
   colorsArray = generateColors();
   rightColor = chooseRight(colorsArray);
   answer.innerHTML = 'Escolha uma cor';
+  click=false;
   render();
 };
 button.addEventListener('click',()=>{
   colorsArray = generateColors();
   rightColor = chooseRight(colorsArray);
   answer.innerHTML = 'Escolha uma cor';
+  click=false;
   render();
 });
 
@@ -40,10 +45,13 @@ function chooseRight(arr){
 
 function verifyAnswer(){
   const tentativa = event.target.style.backgroundColor;
-  if(tentativa===rightColor) {
+  if(tentativa===rightColor&&click===false) {
+    click=true;
     answer.innerHTML='Acertou!';
+    score+=3;
+    placar.innerHTML=score;
   }
-  else {
+  else if(click===false) {
     answer.innerHTML='Errou! Tente novamente';
     answer.style.color='black';
   }
