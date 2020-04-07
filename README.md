@@ -72,6 +72,8 @@ Ao clicar no botão, deve ser sorteada uma nova cor RGB e novas cores para as bo
 
 Este botão também poderá ser utilizado para iniciar um novo jogo.
 
+O botão deve ter o **id** `reset-game`.
+
 ## BÔNUS
 
 ### 7 - Crie um placar que incremente 3 pontos para cada acerto no jogo
@@ -154,7 +156,7 @@ O elemento que conterá o placar deve ter o **id** `score`.
 
 ---
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO
+### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL)
 
 Para **"entregar"** seu projeto, siga os passos a seguir:
 
