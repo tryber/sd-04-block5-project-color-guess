@@ -1,0 +1,27 @@
+.title{
+  margin: auto;
+  width: 20%;
+  text-align: center;
+}
+
+body{
+  margin: auto;
+}
+
+.circles{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.colors{
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+
+p{
+  text-align: center;
+}
