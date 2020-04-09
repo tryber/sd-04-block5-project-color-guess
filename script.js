@@ -1,5 +1,14 @@
-let divColors = document.getElementById('colors')
+const divColors = document.getElementById('colors')
+const resetColors = document.getElementById('reset-game')
+const answer = document.getElementById('answer');
+const score = document.getElementById('score');
 
+resetColors.addEventListener('click', () => {
+  divColors.innerHTML = '';
+  addCircles();
+  getElementColor();
+  answer.innerHTML = '';
+})
 function randomColor(){
   return Math.floor(Math.random()*257);
 }
@@ -21,9 +30,9 @@ function getElementColor() {
 getElementColor()
 
 function checkColor(e){
-  let answer = document.getElementById('answer');
   if(e.target.style.backgroundColor == document.getElementById('rgb-color').innerHTML){
     answer.innerHTML = 'Acertou!'
+    score.innerHTML = Number(score.innerHTML) + 3
   } else {
     answer.innerHTML = 'Errou! Tente novamente!'
   }
