@@ -3,8 +3,8 @@ const resetColors = document.getElementById('reset-game');
 const answer = document.getElementById('answer');
 const score = document.getElementById('score');
 
-function randomColor(){
-  return Math.floor(Math.random()*257);
+function randomColor() {
+  return Math.floor(Math.random() * 257);
 }
 
 function getElementColor() {
@@ -36,7 +36,8 @@ getElementColor();
 
 resetColors.addEventListener('click', () => {
   divColors.innerHTML = '';
+  answer.innerHTML = 'Escolha uma cor';
   addCircles();
   getElementColor();
-  answer.innerHTML = '';
+  
 });
