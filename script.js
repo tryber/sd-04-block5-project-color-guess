@@ -23,7 +23,7 @@ function checkColor(e) {
 function addCircles() {
   for (let i = 0; i < 6; i += 1) {
     const color = document.createElement('div');
-    color.className = 'circles';
+    color.className = 'ball';
     color.addEventListener('click', checkColor);
     color.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
     divColors.appendChild(color);

@@ -4,7 +4,7 @@
   width: 20%;
 }
 
-.circles {
+.ball {
   border-radius: 50%;
   cursor: pointer;
   height: 70px;
