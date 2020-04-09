@@ -1,27 +1,23 @@
-.title{
+.title {
   margin: auto;
-  width: 20%;
   text-align: center;
+  width: 20%;
 }
 
-body{
-  margin: auto;
-}
-
-.circles{
-  width: 70px;
-  height: 70px;
+.circles {
   border-radius: 50%;
   cursor: pointer;
+  height: 70px;
+  width: 70px;
 }
 
-.colors{
+.colors {
   display: flex;
-  justify-content: space-evenly;
-  width: 80%;
+  justify-content: space-between;
   margin: auto;
+  width: 80%;
 }
 
-p{
+p {
   text-align: center;
 }
