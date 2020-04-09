@@ -8,7 +8,7 @@ function randomColor(){
 }
 
 function getElementColor() {
-  document.getElementById('rgb-color').innerHTML = document.querySelectorAll('.circles')[Math.floor(Math.random() * 6)].style.backgroundColor;
+  document.getElementById('rgb-color').innerHTML = document.querySelectorAll('.ball')[Math.floor(Math.random() * 6)].style.backgroundColor;
 }
 
 function checkColor(e) {
