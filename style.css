@@ -61,3 +61,11 @@ header {
   margin-right: 15px;
   width: 50px;
 }
+
+.answer {
+  font-weight: 900;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
