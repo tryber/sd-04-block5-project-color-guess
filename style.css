@@ -1,0 +1,55 @@
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  margin: 10px;
+  width: 40px;
+}
+
+.balls {
+  background-color: honeydew;
+  border: 5px groove black;
+  border-radius: 50px;
+  max-width: 25%;
+  padding: 15px;
+}
+
+.score {
+  background-color: rgb(106, 168, 43);
+  border: 5px solid black;
+  border-radius: 50px;
+  max-width: 20%;
+  padding: 10px 5px;
+}
+
+.title {
+  font-size: 45px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.reset-game {
+  background-color: rgb(153, 24, 24);
+  border: 3px groove black;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: italic;
+  padding: 10px 25px;
+}
+
+body {
+  background-color: rgb(255, 226, 147);
+  padding: 15px;
+}
+
+.jogo {
+  background-color: rgb(234, 230, 220);
+  border: 15px groove black;
+  border-radius: 50px;
+  height: 600px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
