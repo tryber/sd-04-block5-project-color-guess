@@ -20,12 +20,10 @@ function startGame() {
   for (let i = 0; i < colors.length; i += 1) {
     colors[i].style.backgroundColor = randomColor();
   }
-
   rgbColor.innerHTML = colors[randomNumber(colors.length)].style.backgroundColor;
 }
 
 startGame();
-
 resetGame.addEventListener('click', startGame);
 
 colorsBlock.addEventListener('click', (e) => {
