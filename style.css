@@ -57,8 +57,7 @@ header {
 .ball {
   border-radius: 50px;
   display: inline-block;
-  width: 50px;
   height: 50px;
   margin-right: 15px;
-  background-color: crimson
+  width: 50px;
 }
