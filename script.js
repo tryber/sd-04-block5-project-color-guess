@@ -2,18 +2,13 @@ const rgbColor = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
 const colorsBlock = document.getElementById('colors');
 const resetGame = document.getElementById('reset-game');
-
+// Functions
 function randomNumber(n) {
   return Math.floor(Math.random() * n);
 }
-
 function randomColor() {
-  const r = randomNumber(256);
-  const g = randomNumber(256);
-  const b = randomNumber(256);
-  return `rgb(${r}, ${g}, ${b})`;
+  return `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
 }
-
 function startGame() {
   const colors = document.querySelectorAll('.ball');
   answer.innerHTML = 'Escolha uma cor';
@@ -22,9 +17,9 @@ function startGame() {
   }
   rgbColor.innerHTML = colors[randomNumber(colors.length)].style.backgroundColor;
 }
-
+// Start the game!
 startGame();
-resetGame.addEventListener('click', startGame);
+resetGame.addEventListener('click', startGame); // ReStart the game
 
 colorsBlock.addEventListener('click', (e) => {
   if (e.target !== colorsBlock) {
