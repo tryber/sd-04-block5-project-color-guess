@@ -42,7 +42,7 @@ for (let i = 0; i < balls.length; i += 1) {
       answer.innerHTML = 'Acertou!';
       imgCongrats.src = 'imgs/congrats.png';
       score += 3;
-      scoreDiv.innerHTML = score;
+      scoreDiv.innerHTML = `Score: ${score}`;
     }
     else {
       answer.innerHTML = 'Errou! Tente novamente!';
