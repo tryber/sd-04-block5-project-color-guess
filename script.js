@@ -31,6 +31,7 @@ for (let i = 0; i < balls.length; i += 1) {
   balls[i].addEventListener('click', () => {
     if (balls[i].style.backgroundColor === balls[correctBall].style.backgroundColor) {
       answer.innerHTML = 'Acertou!';
+      document.getElementById('img-congrats').src = 'imgs/congrats.png';
     }
     else {
       answer.innerHTML = 'Errou! Tente novamente!';

@@ -7,7 +7,7 @@ body {
 .main {
   background-color: rgb(213, 198, 226);
   border: 2px solid rgb(198, 177, 216);
-  height: 530px;
+  height: 580px;
   margin: auto;
   margin-top: 20px;
   width: 520px;
@@ -63,13 +63,26 @@ h1 {
 }
 
 .answer {
-  font-weight: 900;
   color: white;
   font-size: 30px;
-  text-align: center;
+  font-weight: 900;
   margin-top: 20px;
+  text-align: center;
 }
 
-.header-pos {
-  margin-top: 170px;
+.congrats {
+  width: 230px;
+  height: 230px;
+  margin: auto;
+}
+
+.footer {
+  background-color: rgb(228, 217, 238);
+  border: solid 5px rgb(238, 228, 247);
+  height: 40px;
+  margin: auto;
+  margin-bottom: 5px;
+  position: relative;
+  top: -60px;
+  width: 550px;
 }
