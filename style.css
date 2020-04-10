@@ -1,0 +1,23 @@
+.title {
+  margin: auto;
+  text-align: center;
+  width: 20%;
+}
+
+.ball {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+}
+
+.colors {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+}
+
+p {
+  text-align: center;
+}
