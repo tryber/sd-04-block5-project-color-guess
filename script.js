@@ -39,5 +39,4 @@ resetColors.addEventListener('click', () => {
   answer.innerHTML = 'Escolha uma cor';
   addCircles();
   getElementColor();
-  
 });
