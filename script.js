@@ -17,28 +17,23 @@ function randomColor() {
 function startGame() {
   const colors = document.querySelectorAll('.ball');
   answer.innerHTML = 'Escolha uma cor';
-  // for (let color of colors) {
-  //   color.style.backgroundColor = randomColor();
-  // }
   for (let i = 0; i < colors.length; i += 1) {
     colors[i].style.backgroundColor = randomColor();
   }
-  
+
   rgbColor.innerHTML = colors[randomNumber(colors.length)].style.backgroundColor;
 }
 
-resetGame.addEventListener('click', startGame)
+startGame();
 
-window.onload = () => {
-  startGame();
+resetGame.addEventListener('click', startGame);
 
-  colorsBlock.addEventListener('click', (e) => {
-    if (e.target !== colorsBlock) {
-      if (e.target.style.backgroundColor === rgbColor.innerHTML) {
-        answer.innerHTML = 'Acertou!';
-      } else {
-        answer.innerHTML = 'Errou! Tente novamente!';
-      }
+colorsBlock.addEventListener('click', (e) => {
+  if (e.target !== colorsBlock) {
+    if (e.target.style.backgroundColor === rgbColor.innerHTML) {
+      answer.innerHTML = 'Acertou!';
+    } else {
+      answer.innerHTML = 'Errou! Tente novamente!';
     }
-  });
-};
+  }
+});
