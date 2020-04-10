@@ -1,9 +1,11 @@
 .ball {
-  border: 3px solid black;
+  border: 1px solid black;
   border-radius: 50%;
-  display: inline;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
   margin: 10px;
-  padding: 25px 35px;
+  width: 40px;
 }
 
 .score {

@@ -1,29 +1,45 @@
-// random colors
-function randomizeColors() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i += 1) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+//  randomizar RGB:
+function randomRGB(n) {
+  return Math.floor(Math.random() * n);
+}
+
+//  randomizar as cores:
+function randomColor() {
+  return `rgb(${randomRGB(256)}, ${randomRGB(256)}, ${randomRGB(256)})`;
+}
+
+//  carregar a pagina inicial:
+
+function inicio() {
+  const rgbColor = document.getElementById('rgb-color');
+  const colors = document.querySelectorAll('.ball');
+  const answer = document.getElementById('answer');
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = randomColor();
+    answer.innerHTML = 'Escolha uma cor';
   }
+  rgbColor.innerHTML = colors[randomRGB(colors.length)].style.backgroundColor;
+}
 
-//  atribuindo cores
-    const ball1 = document.getElementById('ball1'); ball1.style.backgroundColor = randomizeColors();
-    const ball2 = document.getElementById('ball2'); ball2.style.backgroundColor = randomizeColors();
-    const ball3 = document.getElementById('ball3'); ball3.style.backgroundColor = randomizeColors();
-    const ball4 = document.getElementById('ball4'); ball4.style.backgroundColor = randomizeColors();
-    const ball5 = document.getElementById('ball5'); ball5.style.backgroundColor = randomizeColors();
-    const ball6 = document.getElementById('ball6'); ball6.style.backgroundColor = randomizeColors();
 
-//  funcionalidade do botão reset
+inicio();
+const resetButton = document.getElementById('reset-game');
+resetButton.addEventListener('click', inicio);
 
-  const reset = document.getElementById('reset-game');
-  reset.addEventListener('click', function () {
-    ball1.style.backgroundColor = randomizeColors();
-    ball2.style.backgroundColor = randomizeColors();
-    ball3.style.backgroundColor = randomizeColors();
-    ball4.style.backgroundColor = randomizeColors();
-    ball5.style.backgroundColor = randomizeColors();
-    ball6.style.backgroundColor = randomizeColors();
-  })
+//  clicar na bola:
+balls.addEventListener('click', (event) => {
+const balls = document.getElementById('balls');
+const score = document.getElementById('score');
+const rgbColor = document.getElementById('rgb-color');
+
+  if (event.target !== balls) {
+    if (event.target.style.backgroundColor === rgbColor.innerHTML) {
+      answer.innerHTML = 'Acertou!';
+      points += 3;
+      score.innerHTML = `Pontos: ${points}`;
+    } else {
+      answer.innerHTML = 'Errou! Tente novamente!';
+    }
+  }
+});
+let points = null;
