@@ -5,6 +5,8 @@ const balls = document.querySelectorAll('.ball');
 const answer = document.getElementById('answer');
 let imgCongrats = document.getElementById('img-congrats');
 let correctBall = 0;
+let score = 0;
+const scoreDiv = document.getElementById('score');
 
 function resetGame(){
   answer.innerHTML = 'Escolha uma cor';
@@ -39,6 +41,8 @@ for (let i = 0; i < balls.length; i += 1) {
     if (balls[i].style.backgroundColor === balls[correctBall].style.backgroundColor) {
       answer.innerHTML = 'Acertou!';
       imgCongrats.src = 'imgs/congrats.png';
+      score += 3;
+      scoreDiv.innerHTML = score;
     }
     else {
       answer.innerHTML = 'Errou! Tente novamente!';

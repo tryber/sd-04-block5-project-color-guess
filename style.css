@@ -88,6 +88,17 @@ h1 {
   margin: auto;
 }
 
+
+.score-position {
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+  padding-right: 20px;
+  position: relative;
+  text-align: right;
+  top: -50px;
+}
+
 .footer {
   background-color: rgb(228, 217, 238);
   border: solid 5px rgb(238, 228, 247);
