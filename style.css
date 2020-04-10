@@ -1,0 +1,15 @@
+.ball {
+  border: 3px solid black;
+  border-radius: 50%;
+  display: inline;
+  margin: 10px;
+  padding: 25px 35px;
+}
+
+.score {
+  background-color: greenyellow;
+  border: 5px solid black;
+  border-radius: 50px;
+  max-width: 20%;
+  padding: 10px 5px;
+}
