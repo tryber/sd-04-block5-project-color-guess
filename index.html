@@ -9,17 +9,17 @@
 
 <body>
 
-
+    <div class="jogo">
             <!--REQUISITO 1 -  TÍTULO------------------------------------------------------------------------------------------------------------->
         <center>
-        <h1 id="title" class="title">== Adivinha a Cor ==</h1>
-        <div id="score" class="score">Pontos:   <span class="ponto">0</span></div>
+        <h1 id="title" class="title">== Adivinhe a Cor ==</h1><br>
+        <div id="score" class="score">Pontos:   <span id="ponto">0</span></div>
         </center>
             <!--REQUISITO 1 -  TÍTULO------------------------------------------------------------------------------------------------------------->
         <br>
             <!--REQUISITO 2 -  RGB---------------------------------------------------------------------------------------------------------------->
         <center>
-        <h2 id="rgb-color" class="rgb-color"></h2>    
+        <h2 id="rgb-color" class="rgb-color"></h2>
         </center>
             <!--REQUISITO 2 -  RGB---------------------------------------------------------------------------------------------------------------->
 
@@ -28,7 +28,7 @@
 
         <!--REQUISITO 3 -  BOLAS------------------------------------------------------------------------------------------------------------------>
         <center>
-        <div id="balls">
+        <div id="balls" class="balls">
         <center>
             <div id="ball1" class="ball"></div>
             <div id="ball2" class="ball"></div>
@@ -39,7 +39,7 @@
         </center>
         </div>
         </center>
-        <br><br><br><br>
+        <br>
         <!--REQUISITO 3 -  BOLAS------------------------------------------------------------------------------------------------------------------>
 
         <!--REQUISITO 4 -  ANSWER----------------------------------------------------------------------------------------------------------------->
@@ -50,9 +50,11 @@
 
         <!--REQUISITO 6 -  RESET BUTTON----------------------------------------------------------------------------------------------------------->
         <center>
-            <button id="reset-game" class="reset-game">Resetar Cores</button>
+            <button id="reset-game" class="reset-game">↻</button>
         </center>
         <!--REQUISITO 6 -  RESET BUTTON----------------------------------------------------------------------------------------------------------->
+
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
