@@ -24,7 +24,7 @@ h1 {
   -webkit-text-stroke: 2px white;
 }
 
-header {
+.header {
   background-color: rgb(228, 217, 238);
   border: solid 5px rgb(238, 228, 247);
   height: 60px;
@@ -68,4 +68,8 @@ header {
   font-size: 30px;
   text-align: center;
   margin-top: 20px;
+}
+
+.header-pos {
+  margin-top: 170px;
 }
