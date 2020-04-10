@@ -2,6 +2,8 @@ const rgbColor = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
 const colorsBlock = document.getElementById('colors');
 const resetGame = document.getElementById('reset-game');
+const score = document.getElementById('score');
+let points = null;
 // Functions
 function randomNumber(n) {
   return Math.floor(Math.random() * n);
@@ -25,6 +27,8 @@ colorsBlock.addEventListener('click', (e) => {
   if (e.target !== colorsBlock) {
     if (e.target.style.backgroundColor === rgbColor.innerHTML) {
       answer.innerHTML = 'Acertou!';
+      points += 3;
+      score.innerHTML = `Pontuação: ${points}`;
     } else {
       answer.innerHTML = 'Errou! Tente novamente!';
     }
