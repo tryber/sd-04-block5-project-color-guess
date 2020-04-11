@@ -1,4 +1,5 @@
 const adivinhaRGB = document.getElementById('rgb-color'); // Manipula texto que exibe RGB.
+const answer = document.getElementById('answer');
 const bolas = document.querySelectorAll('.ball'); // Manipula as bolas de cores.
 
 function atribuiCores() {
@@ -16,7 +17,7 @@ function geraRGB() {
   const red = Number.parseInt(Math.random() * 255, 10);
   const green = Number.parseInt(Math.random() * 255, 10);
   const blue = Number.parseInt(Math.random() * 255, 10);
-  const cor = `(${red},${green},${blue})`;
+  const cor = `(${red}, ${green}, ${blue})`;
   return cor;
 }
 
@@ -24,7 +25,23 @@ function configuraRGB() {
   adivinhaRGB.innerText = geraRGB();
 }
 
+function clickBall() {
+  let cor = event.target.style.backgroundColor;
+  if(cor === `rgb${adivinhaRGB.innerText}`) {
+    answer.innerText = 'Acertou!';
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+  }
+}
+
+function eventCores() {
+  for (let i = 0; i < bolas.length; i += 1) {
+    bolas[i].addEventListener('click', clickBall);
+  }
+}
+
 window.onload = function () {
   configuraRGB();
   atribuiCores();
+  eventCores();
 };
