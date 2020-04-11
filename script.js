@@ -3,10 +3,10 @@ const bolas = document.querySelectorAll('.ball'); // Manipula as bolas de cores.
 
 function atribuiCores() {
   const comprimento = bolas.length;
-  const corCorreta = Number.parseInt(Math.floor(Math.random() * 6, 10));
+  const corCorreta = Number.parseInt(Math.floor(Math.random() * 6), 10);
   bolas[corCorreta].style.backgroundColor = `rgb${adivinhaRGB.innerText}`;
-  for(let b = 0; b < comprimento; b += 1) {
-    if(bolas[b].style.backgroundColor === '') {
+  for (let b = 0; b < comprimento; b += 1) {
+    if (bolas[b].style.backgroundColor === '') {
       bolas[b].style.backgroundColor = `rgb${geraRGB()}`;
     }
   }
