@@ -1,7 +1,10 @@
 const adivinhaRGB = document.getElementById('rgb-color'); // Manipula texto que exibe RGB.
 const answer = document.getElementById('answer'); // Manipula o texto de resposta.
 const reset = document.getElementById('reset-game'); // Manipula botão de reiniciar.
-let bolas = document.querySelectorAll('.ball'); // Manipula as bolas de cores.
+const score = document.getElementById('score'); // Manipula o placar de pontos.
+const bolas = document.querySelectorAll('.ball'); // Manipula as bolas de cores.
+let pontos = 0;
+let status = true;
 
 function geraRGB() {
   const red = Number.parseInt(Math.random() * 255, 10);
@@ -12,8 +15,8 @@ function geraRGB() {
 }
 
 function limpaCores() {
-  for(let bola of bolas) {
-    bola.style.backgroundColor = '';
+  for (let b = 0 ; b < bolas.length; b += 1) {
+    bolas[b].style.backgroundColor = '';
   }
 }
 
@@ -32,10 +35,24 @@ function configuraRGB() {
   adivinhaRGB.innerText = geraRGB();
 }
 
+function mudaStatus() {
+  status = false;
+  return status;
+}
+
+function configuraPlcar() {
+  if (status) {
+    pontos += 3;
+    score.value = pontos;
+    mudaStatus();
+  }
+}
+
 function clickBall() {
   const cor = event.target.style.backgroundColor;
   if (cor === `rgb${adivinhaRGB.innerText}`) {
     answer.innerText = 'Acertou!';
+    configuraPlcar();
   } else {
     answer.innerText = 'Errou! Tente novamente!';
   }
@@ -51,6 +68,8 @@ function reiniciaJogo() {
   limpaCores();
   configuraRGB();
   atribuiCores();
+  status = true;
+  answer.innerText = 'Escolha uma cor';
 }
 
 function eventReset() {

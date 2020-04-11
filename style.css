@@ -2,9 +2,24 @@
   text-align: center;
 }
 
-button {
+button , input, label {
   display: block;
   margin: 0 auto;
+  width: 110px;
+  height: 30px;
+}
+
+input {
+  color: white;
+  background-color: rgb(9, 9, 112);
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 900;
+  text-indent: 50%;
+}
+
+label {
+  font-size: 2vw;
 }
 
 .ball {
