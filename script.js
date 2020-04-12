@@ -15,7 +15,7 @@ function geraRGB() {
 }
 
 function limpaCores() {
-  for (let b = 0 ; b < bolas.length; b += 1) {
+  for (let b = 0; b < bolas.length; b += 1) {
     bolas[b].style.backgroundColor = '';
   }
 }
