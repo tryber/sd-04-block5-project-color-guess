@@ -4,7 +4,7 @@ const reset = document.getElementById('reset-game'); // Manipula botão de reini
 const score = document.getElementById('score'); // Manipula o placar de pontos.
 const bolas = document.querySelectorAll('.ball'); // Manipula as bolas de cores.
 let pontos = 0;
-//let status = true;
+let status = true;
 
 function geraRGB() { // Gera cor aleatória.
   const red = Number.parseInt(Math.random() * 255, 10);
@@ -35,17 +35,16 @@ function configuraRGB() { // Configura o texto com a cor a ser adivinhada.
   adivinhaRGB.innerText = geraRGB();
 }
 
-//function mudaStatus() { // Altera o status, limita para 1 acerto por rodada.
-//  status = false;
-//  return status;
-//}
+function mudaStatus() { // Altera o status, limita para 1 acerto por rodada.
+  status = false;
+}
 
 function configuraPlcar() { // Configura placar incrementando pontos.
-  //if (status) {
+  if (status) {
     pontos += 3;
-    score.value = pontos;
-    //mudaStatus();
-  //}
+    score.innerHTML = pontos;
+    mudaStatus();
+  }
 }
 
 function clickBall() { // Avalia o acerto.

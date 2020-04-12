@@ -2,20 +2,20 @@
   text-align: center;
 }
 
-button , input , label {
+button , .pontos , label {
   display: block;
   height: 30px;
   margin: 0 auto;
   width: 110px;
 }
 
-input {
+.pontos {
   background-color: rgb(9, 9, 112);
   border-radius: 10px;
   color: white;
   font-size: 18px;
   font-weight: 900;
-  text-indent: 50%;
+  text-align: center;
 }
 
 label {
