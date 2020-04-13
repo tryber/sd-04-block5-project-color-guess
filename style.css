@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+}
+
+.answer {
+  font-size: 40px;
+}
+
+.ball {
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+  display: inline-block;
+  height: 80px;
+  margin: 2%;
+  text-align: center;
+  width: 80px;
+}
+
+.reset {
+  background-color: salmon;
+  padding: 5px;
+}
