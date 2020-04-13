@@ -3,35 +3,31 @@ const ball = document.getElementsByClassName('ball');
 const colorGuess = document.getElementById('rgb-color');
 
 // Gerando cor aleatória
-function randomColor (n) {
+function randomNumber (n) {
   return Math.floor(Math.random() * n);
 }
 
 function randomBoard () {
-  let array = [];
-  for (let i = 0; i < 6; i += 1){
-    array.push('rgb(' + randomColor(256) + ', ' + randomColor(256) + ', ' + randomColor(256) + ')');
-  }
-  return array;
+    ball[0].style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+    ball[1].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
+    ball[2].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
+    ball[3].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
+    ball[4].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
+    ball[5].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
 }
 
-function savingColor() {
-  for (let i = 0; i < 6; i += 1){
-    balls[i].style.backgroundColor = array[i];
-  }
+function inicial () {
+  randomBoard;
+  colorGuess.innerHTML = ball[this.randomNumber(5)];
 }
 
 window.onload = function () {
-  colorGuess.innerHTML = randomColor(6)
-  randomBoard;
-  savingColor;
-
+  inicial;
 }
 
 
 // Lendo entrada do Botão
 let buttom = document.getElementById('reset');
 buttom.addEventListener('click', function () {
-  randomBoard;
-  savingColor;
+  inicial;
 })
