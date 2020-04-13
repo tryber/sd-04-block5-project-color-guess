@@ -1,6 +1,7 @@
 // Leituras
-const ball = document.getElementsByClassName('ball');
+let ball = document.getElementsByClassName('ball');
 const colorGuess = document.getElementById('rgb-color');
+let resultado = document.getElementById('answer');
 
 // Gerando cor aleatória
 function randomNumber (n) {
@@ -8,26 +9,39 @@ function randomNumber (n) {
 }
 
 function randomBoard () {
-    ball[0].style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+    ball[0].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
     ball[1].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
     ball[2].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
     ball[3].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
     ball[4].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
     ball[5].style.backgroundColor = `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
-}
+  }
 
 function inicial () {
-  randomBoard;
-  colorGuess.innerHTML = ball[this.randomNumber(5)];
+  randomBoard();
+  colorGuess.innerHTML = ball[randomNumber(5)].style.backgroundColor;
+  resultado.innerHTML = 'Escolha uma cor!';
 }
 
 window.onload = function () {
-  inicial;
+  inicial();
 }
-
 
 // Lendo entrada do Botão
 let buttom = document.getElementById('reset');
-buttom.addEventListener('click', function () {
-  inicial;
-})
+buttom.addEventListener('click', inicial);
+
+// Add event listener para as cores
+for (let i = 0; i < 6; i += 1){
+  ball[i].addEventListener('click', conferencia)
+}
+
+function conferencia() {
+  resultado.innerHTML = '';
+  const cor = event.target.style.backgroundColor;
+  if (cor === colorGuess.innerText){
+    resultado.innerHTML = "Acertou!"
+  } else {
+    resultado.innerHTML = "Errou! Tente novamente!"
+  }
+}
