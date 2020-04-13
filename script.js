@@ -38,7 +38,7 @@ function conferencia() {
 }
 
 // Lendo entrada do Botão
-const buttom = document.getElementById('reset');
+const buttom = document.getElementById('reset-game');
 buttom.addEventListener('click', inicial);
 
 // Add event listener para as cores
