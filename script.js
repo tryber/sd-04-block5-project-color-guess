@@ -16,3 +16,18 @@ for (let i = 0; i < balls.length; i += 1) {
     balls[i].style.backgroundColor = `rgb${rgbRandom()}`;
   }
 }
+
+function verifyColor(element) {
+  const  guessedColor = element.style.backgroundColor;
+  if (guessedColor === `rgb${rgbColor.innerHTML}`) return true;
+  else return false;
+}
+
+const p = document.createElement('p');
+document.body.appendChild(p);
+p.innerHTML = 'Escolha uma cor';
+const selectColor = document.getElementById('select-color');
+selectColor.addEventListener('click', function () {
+  if (verifyColor(event.target)) p.innerHTML = 'Acertou!';
+  else p.innerHTML = 'Errou! Tente novamente!';
+});
