@@ -1,6 +1,8 @@
 let colorToGuess = getRandomColor();
 document.querySelector('#rgb-color').innerHTML = `(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
-document.querySelector('#score').textContent = localStorage.getItem('score');
+if (localStorage.length) {
+  document.querySelector('#score').textContent = localStorage.getItem('score');
+}
 
 generateAnswers(colorToGuess, 6);
 
