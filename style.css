@@ -80,4 +80,5 @@ button:active {
   height: 70px;
   border-radius: 100%;
   border: 0 solid;
+  margin-right: 18px;
 }
