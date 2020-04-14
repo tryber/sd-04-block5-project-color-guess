@@ -1,4 +1,5 @@
-document.querySelector('#rgb-color');
+const colorToGuess = getRandomColor();
+document.querySelector('#rgb-color').innerHTML = `(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
 
 function randomNumber(maxSize) {
   const number = Math.round(Math.random() * maxSize);
