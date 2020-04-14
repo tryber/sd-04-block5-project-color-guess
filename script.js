@@ -9,6 +9,9 @@ for (const color in colorAnswers) {
     const colorAnsElement = document.createElement('div');
     colorAnsElement.className = 'ball';
     colorAnsElement.style.backgroundColor = `rgb(${colorData.red}, ${colorData.green}, ${colorData.blue})`;
+    colorAnsElement.addEventListener('click', (e) => {
+      document.querySelector('#answer').innerHTML = checkAnswer(e.target);
+    });
 
     colorAnsContainer.appendChild(colorAnsElement);
   }
@@ -43,4 +46,13 @@ function generateAnswers(correctAnswer, numberOfAnswers) {
   }
 
   return answers;
+}
+
+function checkAnswer(answer) {
+  const selectedColorStyle = answer.style.backgroundColor;
+  const correctAnswer = `rgb(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
+
+  const result = selectedColorStyle === correctAnswer ? 'Acertou!' : 'Errou! Tente novamente!';
+
+  return result;
 }
