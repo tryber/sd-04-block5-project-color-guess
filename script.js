@@ -30,11 +30,18 @@ function verifyColor(element) {
 
 const p = document.getElementById('answer');
 p.innerHTML = 'Escolha uma cor';
+let placar = 0;
+const placarElement = document.getElementById('score');
+placarElement.innerHTML = `Placar = ${placar}`;
 const selectColor = document.getElementById('select-color');
 selectColor.addEventListener('click', function () {
-  if (verifyColor(event.target)) p.innerHTML = 'Acertou!';
-  else p.innerHTML = 'Errou! Tente novamente!';
+  if (verifyColor(event.target)) {
+    p.innerHTML = 'Acertou!';
+    placar += 3;
+    placarElement.innerHTML = `Placar = ${placar}`;
+  } else p.innerHTML = 'Errou! Tente novamente!';
 });
+
 const buttonReset = document.getElementById('reset-game');
 buttonReset.addEventListener('click', function () {
   rgbColor.innerHTML = rgbRandom();
