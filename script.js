@@ -1,3 +1,5 @@
+document.querySelector('#rgb-color');
+
 function randomNumber(maxSize) {
   const number = Math.round(Math.random() * maxSize);
 
