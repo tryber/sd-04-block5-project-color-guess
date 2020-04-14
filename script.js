@@ -20,3 +20,14 @@ function getRandomColor() {
 
   return rgbColor;
 }
+
+function generateAnswers(correctAnswer, numberOfAnswers) {
+  const answers = [];
+  const correctAnswerPostion = randomNumber(numberOfAnswers);
+  answers[correctAnswerPostion] = correctAnswer;
+  for (let i = 0; i < numberOfAnswers; i += 1) {
+    if (i !== correctAnswerPostion) answers[i] = getRandomColor();
+  }
+
+  return answers;
+}
