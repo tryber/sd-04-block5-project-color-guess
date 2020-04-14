@@ -2,7 +2,7 @@ const colorToGuess = getRandomColor();
 document.querySelector('#rgb-color').innerHTML = `(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
 
 const colorAnsContainer = document.querySelector('#color-answers');
-const colorAnswers = generateAnswers(colorToGuess, 5);
+const colorAnswers = generateAnswers(colorToGuess, 6);
 for (const color in colorAnswers) {
   if (colorAnswers.hasOwnProperty(color)) {
     const colorData = colorAnswers[color];
