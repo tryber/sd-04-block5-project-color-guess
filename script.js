@@ -64,3 +64,19 @@ function checkAnswer(answer) {
 
   return result;
 }
+
+function increaseScore(points) {
+  if (localStorage.length) {
+    let currentScore = Number(localStorage.getItem('score'));
+    currentScore += points;
+    localStorage.setItem('score', currentScore);
+  }
+}
+
+function decreaseScore(points) {
+  if (localStorage.length) {
+    let currentScore = Number(localStorage.getItem('score'));
+    currentScore -= points;
+    localStorage.setItem('score', currentScore);
+  }
+}
