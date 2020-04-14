@@ -6,19 +6,19 @@ let correctBall;
 let score;
 
 function randomColor() {
-  let rgb = [];
+  const rgb = [];
   for (let i = 0; i < 3; i += 1) {
     rgb[i] = parseInt(Math.random() * 255, 10);
   }
-  return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
+  return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 }
 
 function selectAnswer(event) {
   if (event.target === correctBall) {
     answer.innerText = 'Acertou!';
-    score.innerText = parseInt(score.innerText) + 3;
+    score.innerText = parseInt(score.innerText, 10) + 3;
     correctBall = null;
-  } else if (correctBall){
+  } else if (correctBall) {
     answer.innerText = 'Errou! Tente novamente!';
   }
 }
@@ -51,7 +51,7 @@ function setVariables() {
 function setEvents() {
   resetButton.addEventListener('click', startGame);
   for (let i = 0; i < balls.length; i += 1) {
-    balls[i].addEventListener("click", selectAnswer);
+    balls[i].addEventListener('click', selectAnswer);
   }
 }
 
@@ -59,4 +59,4 @@ window.onload = function () {
   setVariables();
   setEvents();
   startGame();
-}
+};
