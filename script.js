@@ -11,11 +11,11 @@ function randomcolor (){
 }
 //function on click RESET button, active ballsGetRandomColor()
 const resetGameElement = document.querySelector('#reset-game');
-resetGameElement.addEventListener('click',ballsGetRandomColor);
-//function button3changestyle (){
-	//ballsGetRandomColor();
-	//console.log('Hello');
-//};
+resetGameElement.addEventListener('click',button3changestyle);
+function button3changestyle (){
+	ballsGetRandomColor();
+	document.querySelector('#title').innerHTML = 'Adivinhe a cor!';
+};
 
 // function all ball get a random color and set one of the color to h2 in a text form 
 function ballsGetRandomColor (){
