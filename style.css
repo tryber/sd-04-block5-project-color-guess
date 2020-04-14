@@ -2,6 +2,7 @@ body {
   background: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_960_720.jpg') no-repeat;
   background-size: cover;
 }
+
 .gameTitle , .rgbColor , .resposta , label {
   background-color: rgba(90, 0, 90, 0.4);
   color: white;
