@@ -1,21 +1,19 @@
-const colorToGuess = getRandomColor();
+let colorToGuess = getRandomColor();
 document.querySelector('#rgb-color').innerHTML = `(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
 
-const colorAnsContainer = document.querySelector('#color-answers');
-const colorAnswers = generateAnswers(colorToGuess, 6);
-for (const color in colorAnswers) {
-  if (colorAnswers.hasOwnProperty(color)) {
-    const colorData = colorAnswers[color];
-    const colorAnsElement = document.createElement('div');
-    colorAnsElement.className = 'ball';
-    colorAnsElement.style.backgroundColor = `rgb(${colorData.red}, ${colorData.green}, ${colorData.blue})`;
-    colorAnsElement.addEventListener('click', (e) => {
-      document.querySelector('#answer').innerHTML = checkAnswer(e.target);
-    });
+generateAnswers(colorToGuess, 6);
 
-    colorAnsContainer.appendChild(colorAnsElement);
+const resetBtn = document.querySelector('#reset-game');
+resetBtn.addEventListener('click', () => {
+  const colorAnsContainer = document.querySelector('#color-answers');
+  while (colorAnsContainer.lastChild) {
+    colorAnsContainer.lastChild.remove();
   }
-}
+
+  colorToGuess = getRandomColor();
+  document.querySelector('#rgb-color').innerHTML = `(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
+  generateAnswers(colorToGuess, 6);
+});
 
 function randomNumber(maxSize) {
   const number = Math.round(Math.random() * maxSize);
@@ -38,6 +36,7 @@ function getRandomColor() {
 }
 
 function generateAnswers(correctAnswer, numberOfAnswers) {
+  const colorAnsContainer = document.querySelector('#color-answers');
   const answers = [];
   const correctAnswerPostion = randomNumber(numberOfAnswers);
   answers[correctAnswerPostion] = correctAnswer;
@@ -45,7 +44,16 @@ function generateAnswers(correctAnswer, numberOfAnswers) {
     if (i !== correctAnswerPostion) answers[i] = getRandomColor();
   }
 
-  return answers;
+  for (const answer of answers) {
+    const colorAnsElement = document.createElement('div');
+    colorAnsElement.className = 'ball';
+    colorAnsElement.style.backgroundColor = `rgb(${answer.red}, ${answer.green}, ${answer.blue})`;
+    colorAnsElement.addEventListener('click', (e) => {
+      document.querySelector('#answer').innerHTML = checkAnswer(e.target);
+    });
+
+    colorAnsContainer.appendChild(colorAnsElement);
+  }
 }
 
 function checkAnswer(answer) {
