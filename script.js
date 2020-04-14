@@ -1,5 +1,6 @@
 let colorToGuess = getRandomColor();
 document.querySelector('#rgb-color').innerHTML = `(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
+document.querySelector('#score').textContent = localStorage.getItem('score');
 
 generateAnswers(colorToGuess, 6);
 
@@ -78,6 +79,7 @@ function increaseScore(points) {
   }
   currentScore += points;
   localStorage.setItem('score', currentScore);
+  document.querySelector('#score').innerHTML = currentScore;
 }
 
 function decreaseScore(points) {
@@ -87,4 +89,5 @@ function decreaseScore(points) {
   }
   currentScore -= points;
   localStorage.setItem('score', currentScore);
+  document.querySelector('#score').innerHTML = currentScore;
 }
