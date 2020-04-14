@@ -59,24 +59,32 @@ function generateAnswers(correctAnswer, numberOfAnswers) {
 function checkAnswer(answer) {
   const selectedColorStyle = answer.style.backgroundColor;
   const correctAnswer = `rgb(${colorToGuess.red}, ${colorToGuess.green}, ${colorToGuess.blue})`;
-
-  const result = selectedColorStyle === correctAnswer ? 'Acertou!' : 'Errou! Tente novamente!';
+  let result = null;
+  if (selectedColorStyle === correctAnswer) {
+    increaseScore(3);
+    result = 'Acertou!';
+  } else {
+    decreaseScore(1);
+    result = 'Errou! Tente novamente!';
+  }
 
   return result;
 }
 
 function increaseScore(points) {
+  let currentScore = 0;
   if (localStorage.length) {
-    let currentScore = Number(localStorage.getItem('score'));
-    currentScore += points;
-    localStorage.setItem('score', currentScore);
+    currentScore = Number(localStorage.getItem('score'));
   }
+  currentScore += points;
+  localStorage.setItem('score', currentScore);
 }
 
 function decreaseScore(points) {
+  let currentScore = 0;
   if (localStorage.length) {
-    let currentScore = Number(localStorage.getItem('score'));
-    currentScore -= points;
-    localStorage.setItem('score', currentScore);
+    currentScore = Number(localStorage.getItem('score'));
   }
+  currentScore -= points;
+  localStorage.setItem('score', currentScore);
 }
