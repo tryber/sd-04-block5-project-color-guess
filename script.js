@@ -10,21 +10,20 @@ rgbColor.innerHTML = rgbRandom();
 const balls = document.querySelectorAll('.ball');
 const colorIndex = Math.floor(Math.random() * 5);
 for (let i = 0; i < balls.length; i += 1) {
-  if (i === colorIndex){
+  if (i === colorIndex) {
     balls[i].style.backgroundColor = `rgb${rgbColor.innerHTML}`;
-  }  else {
+  } else {
     balls[i].style.backgroundColor = `rgb${rgbRandom()}`;
   }
 }
 
 function verifyColor(element) {
-  const  guessedColor = element.style.backgroundColor;
+  const guessedColor = element.style.backgroundColor;
   if (guessedColor === `rgb${rgbColor.innerHTML}`) return true;
-  else return false;
+  return false;
 }
 
-const p = document.createElement('p');
-document.body.appendChild(p);
+const p = document.getElementById('answer');
 p.innerHTML = 'Escolha uma cor';
 const selectColor = document.getElementById('select-color');
 selectColor.addEventListener('click', function () {
