@@ -1,6 +1,9 @@
 window.onload = function(){
 
 }// end of window.onload
+let scorevalue = 0;
+const scoreElement = document.getElementById('score');
+scoreElement.innerHTML = 'Seu score é: ' + scorevalue;
 const balls = document.querySelectorAll('.ball');
 const rgbColorElement = document.querySelector('#rgb-color');
 // return random number between 1 and 255
@@ -16,7 +19,7 @@ const resetGameElement = document.querySelector('#reset-game');
 resetGameElement.addEventListener('click',button3changestyle);
 function button3changestyle (){
 	ballsGetRandomColor();
-	console.log('Hello click');
+//	console.log('Hello click');
 	document.querySelector('#answer').innerHTML = 'Escolha uma cor';
 };
 // function all ball get a random color and set one of the color to h2 in a text form 
@@ -41,6 +44,8 @@ document.body.addEventListener('click', function (event) {
 	testComparison = targetbackground == 'rgb' + rgbColorElement.innerHTML;
 	if (targetbackground == 'rgb' + rgbColorElement.innerHTML && classname.includes('ball')) {
 		document.querySelector('#answer').innerHTML = 'Acertou!';
+		scorevalue += 3	;
+		scoreElement.innerHTML = 'Seu score é: ' + scorevalue;;
 	}
 	else if (targetbackground !== 'rgb' + rgbColorElement.innerHTML && classname.includes('ball')) {
 		document.querySelector('#answer').innerHTML = 'Errou! Tente novamente!';
