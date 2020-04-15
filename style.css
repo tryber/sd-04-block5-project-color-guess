@@ -3,7 +3,6 @@ body {
 	text-align: center;
 }
 .ball {
-	background: green;
 	border-radius: 50px;
 	display: inline-flex;
 	height: 100px;
