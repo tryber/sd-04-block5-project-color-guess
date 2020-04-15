@@ -26,7 +26,7 @@ function ballsGetRandomColor() {
   const randomBall = Math.round(Math.random() * 5);
 //  console.log('randomBall',randomBall);
   for (let i = 0; i < balls.length; i += 1) {
-    cons tempColor = randomcolor();
+    const tempColor = randomcolor();
     balls[i].style.backgroundColor = 'rgb' + tempColor;
     //  console.log('i',i,balls[i].style.backgroundColor);
     if (randomBall === i) {
@@ -44,9 +44,9 @@ document.body.addEventListener('click', function (event) {
   if (targetbackground === 'rgb' + rgbColorElement.innerHTML && classname.includes('ball')) {
     document.querySelector('#answer').innerHTML = 'Acertou!';
     scorevalue += 3;
-    scoreElement.innerHTML = 'Seu score é: ' + scorevalue;  } 
-    else if (targetbackground !== 'rgb' + rgbColorElement.innerHTML && classname.includes('ball')) {
-    document.querySelector('#answer').innerHTML = 'Errou! Tente novamente!';
+    scoreElement.innerHTML = 'Seu score é: ' + scorevalue;
+  } else if (targetbackground !== 'rgb' + rgbColorElement.innerHTML && classname.includes('ball')) {
+      document.querySelector('#answer').innerHTML = 'Errou! Tente novamente!';
     //  console.log('loop errou');
-  }
+    }
 });
