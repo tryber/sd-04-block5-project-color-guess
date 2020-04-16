@@ -1,0 +1,14 @@
+.title {
+  color: white;
+  margin: 50px;
+  text-align: center;
+}
+
+/* Global resets */
+body {
+  background-color: rgb(29, 31, 32);
+  box-sizing: border-box;
+  font-family: Manrope, sans-serif;
+  margin: 0;
+  padding: 0;
+}
