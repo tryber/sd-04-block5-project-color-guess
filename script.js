@@ -36,7 +36,7 @@ function checkGuess() {
       const guess = ball.style.background;
 
       if (guess === `rgb${rgbColor.innerHTML}`) {
-        result.innerHTML = 'Correct!';
+        result.innerHTML = 'Acertou!';
       } else {
         result.innerHTML = 'Errou! Tente novamente!';
       }
