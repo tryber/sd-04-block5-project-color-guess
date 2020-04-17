@@ -1,3 +1,26 @@
+.ball-container {
+  display: flex;
+  justify-content: center;
+}
+
+.ball {
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
+}
+
+.ball:hover {
+  filter: brightness(1.2);
+}
+
+.rgb-color {
+  color: white;
+  text-align: center;
+}
+
 .title {
   color: white;
   margin: 50px;
