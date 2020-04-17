@@ -1,0 +1,74 @@
+.reset-game {
+  background-color: #3d3d3d;
+  border: 1px solid white;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 15px 30px;
+}
+
+.score {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.answer {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0.83rem 0 0;
+  text-align: center;
+}
+
+.ball-container {
+  display: flex;
+  justify-content: center;
+}
+
+.ball {
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  margin: 10px;
+  width: 50px;
+}
+
+.ball:hover {
+  filter: brightness(1.2);
+}
+
+.rgb-color {
+  color: white;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 50px;
+  text-align: center;
+}
+
+.game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global resets */
+body {
+  align-items: center;
+  background-color: rgb(29, 31, 32);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: Manrope, sans-serif;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
