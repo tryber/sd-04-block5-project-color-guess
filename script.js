@@ -38,7 +38,7 @@ function checkGuess() {
       if (guess === `rgb${rgbColor.innerHTML}`) {
         result.innerHTML = 'Correct!';
       } else {
-        result.innerHTML = 'Wrong guess! Try again.';
+        result.innerHTML = 'Errou! Tente novamente!';
       }
     });
   });
