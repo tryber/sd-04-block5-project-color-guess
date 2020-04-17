@@ -1,6 +1,7 @@
 const rgbColor = document.querySelector('.rgb-color');
-const result = document.querySelector('.result');
+const answer = document.querySelector('.answer');
 const resetGame = document.querySelector('.reset-game');
+const score = document.querySelector('.score');
 
 // Generate random color
 function genRandomRGB() {
@@ -28,6 +29,7 @@ function setBallsRandomColor() {
   setRightColor();
 }
 
+let scoreNum = 0;
 // Check player selected color
 function checkGuess() {
   const balls = document.querySelectorAll('.ball');
@@ -36,9 +38,11 @@ function checkGuess() {
       const guess = ball.style.background;
 
       if (guess === `rgb${rgbColor.innerHTML}`) {
-        result.innerHTML = 'Acertou!';
+        answer.innerHTML = 'Acertou!';
+        scoreNum += 3;
+        score.innerHTML = scoreNum;
       } else {
-        result.innerHTML = 'Errou! Tente novamente!';
+        answer.innerHTML = 'Errou! Tente novamente!';
       }
     });
   });
@@ -49,7 +53,7 @@ function reset() {
   resetGame.addEventListener('click', () => {
     setRandomRGB();
     setBallsRandomColor();
-    result.innerHTML = 'Escolha uma cor';
+    answer.innerHTML = 'Escolha uma cor';
   });
 }
 
