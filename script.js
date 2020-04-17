@@ -1,5 +1,6 @@
 const rgbColor = document.querySelector('.rgb-color');
-const balls = document.querySelectorAll('.ball');
+const result = document.querySelector('.result');
+const resetGame = document.querySelector('.reset-game');
 
 // Generate random color
 function genRandomRGB() {
@@ -12,19 +13,48 @@ function setRandomRGB() {
   rgbColor.innerHTML = genRandomRGB();
 }
 
+// Set right color to single ball
+function setRightColor() {
+  const balls = document.querySelectorAll('.ball');
+  balls[Math.round(Math.random() * 5)].style.background = `rgb${rgbColor.innerHTML}`;
+}
+
 // Set random color to color balls
 function setBallsRandomColor() {
+  const balls = document.querySelectorAll('.ball');
   balls.forEach((ball) => {
     ball.style.background = `rgb${genRandomRGB()}`;
   });
+  setRightColor();
 }
 
-// Set right color to single ball
-function setRightColor() {
-  balls[Math.round(Math.random() * 5)].style.background = `rgb${rgbColor.innerHTML}`;
+// Check player selected color
+function checkGuess() {
+  const balls = document.querySelectorAll('.ball');
+  balls.forEach((ball) => {
+    ball.addEventListener('click', () => {
+      const guess = ball.style.background;
+
+      if (guess === `rgb${rgbColor.innerHTML}`) {
+        result.innerHTML = 'Correct!';
+      } else {
+        result.innerHTML = 'Wrong guess! Try again.';
+      }
+    });
+  });
+}
+
+// Reset game
+function reset() {
+  resetGame.addEventListener('click', () => {
+    setRandomRGB();
+    setBallsRandomColor();
+    result.innerHTML = 'Escolha uma cor';
+  });
 }
 
 // Function calls
 setRandomRGB();
 setBallsRandomColor();
-setRightColor();
+checkGuess();
+reset();
