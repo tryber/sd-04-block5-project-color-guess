@@ -1,0 +1,11 @@
+.ball {
+  border-radius: 50%;
+}
+.ballColor {
+  width: 100px;
+  height: 100px;
+}
+.flexbox {
+  display: flex;
+
+}
