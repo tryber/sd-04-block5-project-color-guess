@@ -1,7 +1,21 @@
-.ball{
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
+* {
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+}
 
+.ball {
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  margin: 10px;
+  display: flex;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
 }
