@@ -66,11 +66,32 @@ function placar() {
   score.textContent = countScore;
 }
 
+
+function selectedBall() {
+  if (document.querySelector('.selected') !== null) {
+    document.querySelector('.selected').classList.remove('selected');
+  }
+  if (event.target && event.target.classList.contains('ball')) {
+    event.target.classList.add('selected')
+  }
+}
+
+divMae.addEventListener("click", function (event) {
+  const lista5 = document.querySelectorAll('li');
+  if (document.querySelector('.selected') !== null) {
+    document.querySelector('.selected').classList.remove('selected');
+  }
+  if (event.target && event.target.nodeName == "LI") {
+    event.target.classList.add('selected')
+  }
+});
+
 window.onload = function () {
   randomColor();
   bolaPremiada();
   colorirBolas();
   divMae.addEventListener('click', this.mouseEvent)
   botaoReiniciar.addEventListener('click', this.reiniciarJogo)
+  divMae.addEventListener('click', this.selectedBall)
 }
 
