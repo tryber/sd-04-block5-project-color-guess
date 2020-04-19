@@ -33,7 +33,7 @@ for (let i = 0; i < balls.length; i++) {
       answer.innerHTML = "Acertou!"
     } else {
       console.log(false);
-      answer.innerHTML = "Errou!"
+      answer.innerHTML = "Errou! Tente novamente!"
     }
   });
 }
