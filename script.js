@@ -46,17 +46,20 @@ function mouseEvent(event) {
 }
 
 function reiniciarJogo() {
-  removeWinner();
+  removeClasses();
   randomColor();
   bolaPremiada();
   colorirBolas();
   resposta.textContent = bckpResposta;
 }
 
-function removeWinner() {
+function removeClasses() {
   for (let i = 0; i < divs.length; i += 1) {
     if (divs[i].classList.contains('winner')) {
       divs[i].classList.remove('winner');
+    }
+    if (divs[i].classList.contains('selected')) {
+      divs[i].classList.remove('selected');
     }
   }
 }
@@ -75,16 +78,6 @@ function selectedBall() {
     event.target.classList.add('selected')
   }
 }
-
-divMae.addEventListener("click", function (event) {
-  const lista5 = document.querySelectorAll('li');
-  if (document.querySelector('.selected') !== null) {
-    document.querySelector('.selected').classList.remove('selected');
-  }
-  if (event.target && event.target.nodeName == "LI") {
-    event.target.classList.add('selected')
-  }
-});
 
 window.onload = function () {
   randomColor();
