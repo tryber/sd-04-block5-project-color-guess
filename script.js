@@ -5,6 +5,7 @@ const resposta = document.getElementById('answer');
 const bckpResposta = resposta.textContent;
 const botaoReiniciar = document.getElementById('reset-game');
 let countScore = 0;
+let arrayBolas = [0, 1, 2, 3, 4, 5];
 
 
 function randomColor() {
@@ -13,7 +14,7 @@ function randomColor() {
   let b = Math.floor(Math.random() * 256);
   return rColor = `(${r}, ${b}, ${g})`;
 }
-let arrayBolas = [0, 1, 2, 3, 4, 5];
+
 function bolaPremiada() {
   arrayBolas = [0, 1, 2, 3, 4, 5];
   paragraph.innerHTML = rColor;
@@ -37,15 +38,14 @@ function colorirBolas() {
 function mouseEvent(event) {
   if (event.target.classList.contains('ball') && event.target.classList.contains('winner')) {
     resposta.innerHTML = 'Acertou!';
-    countScore += 1;
-    console.log(countScore);
+    countScore += 3;
     placar();
   } else {
     resposta.innerHTML = 'Errou! Tente novamente!';
   }
 }
 
-function reiniciarJogo(){
+function reiniciarJogo() {
   removeWinner();
   randomColor();
   bolaPremiada();
