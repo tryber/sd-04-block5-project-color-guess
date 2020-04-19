@@ -4,6 +4,7 @@ const divMae = document.querySelector('.flexbox');
 const resposta = document.getElementById('answer');
 const bckpResposta = resposta.textContent;
 const botaoReiniciar = document.getElementById('reset-game');
+let countScore = 0;
 
 
 function randomColor() {
@@ -33,6 +34,25 @@ function colorirBolas() {
   }
 }
 
+function mouseEvent(event) {
+  if (event.target.classList.contains('ball') && event.target.classList.contains('winner')) {
+    resposta.innerHTML = 'Acertou!';
+    countScore += 1;
+    console.log(countScore);
+    placar();
+  } else {
+    resposta.innerHTML = 'Errou! Tente novamente!';
+  }
+}
+
+function reiniciarJogo(){
+  removeWinner();
+  randomColor();
+  bolaPremiada();
+  colorirBolas();
+  resposta.textContent = bckpResposta;
+}
+
 function removeWinner() {
   for (let i = 0; i < divs.length; i += 1) {
     if (divs[i].classList.contains('winner')) {
@@ -40,25 +60,17 @@ function removeWinner() {
     }
   }
 }
-console.log(divs);
+
+function placar() {
+  const score = document.getElementById('score');
+  score.textContent = countScore;
+}
 
 window.onload = function () {
   randomColor();
   bolaPremiada();
   colorirBolas();
-  divMae.addEventListener('click', function (event) {
-    if (event.target.classList.contains('ball') && event.target.classList.contains('winner')) {
-      resposta.innerHTML = 'Acertou!';
-    } else {
-      resposta.innerHTML = 'Errou! Tente novamente!';
-    }
-  })
-  botaoReiniciar.addEventListener('click', function () {
-    removeWinner();
-    randomColor();
-    bolaPremiada();
-    colorirBolas();
-    resposta.textContent = bckpResposta;
-  })
+  divMae.addEventListener('click', this.mouseEvent)
+  botaoReiniciar.addEventListener('click', this.reiniciarJogo)
 }
 
