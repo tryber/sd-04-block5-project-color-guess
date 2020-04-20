@@ -41,7 +41,7 @@ function apagaClass() {
     if(a != b) {
       resposta.innerHTML = 'Errou! Tente novamente';
   } else {
-      resposta.innerHTML = 'Resposta correta!';
+      resposta.innerHTML = 'Acertou!';
    }
   }
 
