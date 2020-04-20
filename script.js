@@ -18,9 +18,17 @@ function ballsGenerate() {
     const rgbColor = array[Math.floor(array.length * Math.random())];
     console.log(rgbColor);
     const textColor = document.getElementById('rgb-color');
-    textColor.innerHTML = rgbColor;
+    const rgbNum = '('+rgbColor+')';
+    textColor.innerHTML = rgbNum;
+  }
+
+function btnBalls() {
+  for (let i = 0; i < balls.length; i = i + 1) {
 
   }
+}
+
+
 
 window.onload = function() {
   ballsGenerate();
