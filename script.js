@@ -1,13 +1,27 @@
-function colorGenerate() {
-  const x = [Math.floor(Math.random() * (0 + 256)) + 0];
-  const y = [Math.floor(Math.random() * (0 + 256)) + 0];
-  const z = [Math.floor(Math.random() * (0 + 256)) + 0];
-  const rgbColor = ('(' + x + ', ' + y + ', ' + z + ')');
-  const textColor = document.getElementById('rgb-color');
-  textColor.innerHTML = rgbColor;
+// Gerar cores
+const balls = document.querySelectorAll('.ball');
+const array = [];
 
+function random() {
+  const numero = [Math.floor(Math.random() * (0 + 256)) + 0];
+  return numero;
 }
 
+// mudar as cores das esferas
+function ballsGenerate() {
+  for (let i = 0; i < balls.length; i = i + 1) {
+    const cor = (random() + ', ' + random() + ', ' + random());
+    balls[i].style.backgroundColor = 'rgb('+cor+')';
+    array.push(cor);
+    console.log(cor);
+    }
+    const rgbColor = array[Math.floor(array.length * Math.random())];
+    console.log(rgbColor);
+    const textColor = document.getElementById('rgb-color');
+    textColor.innerHTML = rgbColor;
+
+  }
+
 window.onload = function() {
-  colorGenerate();
+  ballsGenerate();
 }
