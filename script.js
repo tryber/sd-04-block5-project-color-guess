@@ -51,6 +51,7 @@ reset.addEventListener('click', function () {
 });
 // To do when load window
 window.onload = function () {
+  answer.innerText = 'Escolha uma cor';
   generateRgb();
   ballsBgColor();
 };
