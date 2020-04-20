@@ -1,7 +1,7 @@
 // Gerar cores
 const balls = document.querySelectorAll('.ball');
 const array = [];
-const answerTwo = document.querySelector('.answerTwo');
+const answer = document.querySelector('#answer');
 
 
 function random() {
@@ -26,12 +26,14 @@ function ballsGenerate() {
     textColor.innerHTML = rgbNum; 
 
     for (let i = 0; i < balls.length; i = i + 1) {
+      let contador = 0;
       balls[i].addEventListener('click', function() {
         if ( balls[i].style.backgroundColor == 'rgb'+rgbNum) {
-          answerTwo.innerHTML = 'Acertou!';
+          answer.innerHTML = 'Acertou!';
+          contador += 3;
         }
         else {
-          answerTwo.innerHTML = ('Errou! Tente novamente!');
+          answer.innerHTML = ('Errou! Tente novamente!');
         }
       });
     }
