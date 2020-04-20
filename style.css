@@ -3,3 +3,12 @@ body {
   padding: 10px;
   text-align: center;
 }
+
+.ball {
+    border-radius: 50%;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-color: #FFFF00;
+    margin: 8px;
+}

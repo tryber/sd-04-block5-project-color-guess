@@ -5,6 +5,9 @@ function colorGenerate() {
   const rgbColor = ('(' + x + ', ' + y + ', ' + z + ')');
   const textColor = document.getElementById('rgb-color');
   textColor.innerHTML = rgbColor;
+
 }
 
-window.onload = colorGenerate;
+window.onload = function() {
+  colorGenerate();
+}
