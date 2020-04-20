@@ -10,6 +10,10 @@ const colorPainel = document.querySelector('#colors');
 const resposta = document.querySelector('#answer');
 const ball = document.querySelectorAll('.ball');
 const btnReinicia = document.querySelector('#reset-game');
+const scoreNode = document.querySelector('#score');
+
+let scoreInicial = 0;
+scoreNode.innerHTML = scoreInicial;
 
 function sortColor() {
   colorOne.style.backgroundColor = `rgb(${Number.parseInt(Math.random() * 255, 10)},${Number.parseInt(Math.random() * 255, 10)},${Number.parseInt(Math.random() * 255, 10)})`;
@@ -42,6 +46,8 @@ function apagaClass() {
       resposta.innerHTML = 'Errou! Tente novamente';
   } else {
       resposta.innerHTML = 'Acertou!';
+      scoreInicial += 3;
+      scoreNode.innerHTML = scoreInicial;
    }
   }
 
@@ -54,6 +60,7 @@ function apagaClass() {
 
     let textoSelecionado = colorOne.style.backgroundColor.toString().replace('rgb', '');
     testaValor(textoSelecionado, textoRGB.innerHTML);
+
   });
 
   colorTwo.addEventListener('click', function () {
