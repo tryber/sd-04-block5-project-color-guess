@@ -4,10 +4,24 @@
 .main-container {
   align-items: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .rgb-color {
-  
+  font-size: 25px;
+}
+
+.ballContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.ball {
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 60px;
+  width: 60px;
 }

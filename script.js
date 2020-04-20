@@ -1,6 +1,7 @@
 // Variables
 const title = document.getElementById('title');
 const rgbColor = document.getElementById('rgb-color');
+const balls = document.querySelectorAll('.ball')
 
 // Generating random rgb
 function generateRgb() {
@@ -9,8 +10,12 @@ function generateRgb() {
     return random;
   }
   const rgb = '(' + random() + ', ' + random() + ', ' + random() + ')';
-  console.log(rgb);
   rgbColor.innerText = rgb;
 }
 //  
 generateRgb();
+
+// for (let i = 0; i < balls.length; i += 1) {
+//   console.log(balls[i]);
+//   balls[i].style.background = 
+// }
