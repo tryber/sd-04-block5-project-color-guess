@@ -1,0 +1,22 @@
+h1 , h2 , p {
+  text-align: center;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+.container-balls {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+button {
+  display: block;
+  margin: auto;
+}
