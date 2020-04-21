@@ -28,6 +28,16 @@ function randomRgbBalls() {
   }
 }
 
+function comparation(e) {
+  if (e.target.style.backgroundColor.slice(3) === elRgbColor.innerText) {
+    elAnswer.innerText = 'Acertou!';
+    score += 3;
+    elScore.innerText = score;
+  } else {
+    elAnswer.innerText = 'Errou! Tente novamente!';
+  }
+}
+
 butReset.addEventListener('click', function () {
   elRgbColor.innerText = randomRgb().slice(3);
 
@@ -36,15 +46,7 @@ butReset.addEventListener('click', function () {
 });
 
 for (i = 0; i < balls.length; i += 1) {
-  balls[i].addEventListener('click', function (e) {
-    if (e.target.style.backgroundColor.slice(3) === elRgbColor.innerText) {
-      elAnswer.innerText = 'Acertou!';
-      score += 3;
-      elScore.innerText = score;
-    } else {
-      elAnswer.innerText = 'Errou! Tente novamente!';
-    }
-  });
+  balls[i].addEventListener('click', comparation);
 }
 
 elRgbColor.innerText = randomRgb().slice(3);
