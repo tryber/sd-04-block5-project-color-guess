@@ -9,16 +9,17 @@ let arrayBolas = [0, 1, 2, 3, 4, 5];
 
 
 function randomColor() {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  return rColor = `(${r}, ${b}, ${g})`;
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const rColor = `(${r}, ${b}, ${g})`;
+  return rColor;
 }
 
-function bolaPremiada() {
+function bolaPremiada(rColor) {
   arrayBolas = [0, 1, 2, 3, 4, 5];
   paragraph.innerHTML = rColor;
-  let index = Math.floor(Math.random() * 6);
+  const index = Math.floor(Math.random() * 6);
   divs[index].style.backgroundColor = `rgb${rColor}`;
   divs[index].classList.add('winner');
   arrayBolas.splice(index, 1);
@@ -28,11 +29,16 @@ function bolaPremiada() {
 
 function colorirBolas() {
   for (let i = 0; i < 5; i += 1) {
-    let index = Math.floor(Math.random() * (arrayBolas.length));
-    let indexDiv = arrayBolas[index];
+    const index = Math.floor(Math.random() * (arrayBolas.length));
+    const indexDiv = arrayBolas[index];
     divs[indexDiv].style.backgroundColor = `rgb${randomColor()}`;
     arrayBolas.splice(index, 1);
   }
+}
+
+function placar() {
+  const score = document.getElementById('score');
+  score.textContent = countScore;
 }
 
 function mouseEvent(event) {
@@ -43,14 +49,6 @@ function mouseEvent(event) {
   } else {
     resposta.innerHTML = 'Errou! Tente novamente!';
   }
-}
-
-function reiniciarJogo() {
-  removeClasses();
-  randomColor();
-  bolaPremiada();
-  colorirBolas();
-  resposta.textContent = bckpResposta;
 }
 
 function removeClasses() {
@@ -64,9 +62,12 @@ function removeClasses() {
   }
 }
 
-function placar() {
-  const score = document.getElementById('score');
-  score.textContent = countScore;
+function reiniciarJogo() {
+  removeClasses();
+  randomColor();
+  bolaPremiada();
+  colorirBolas();
+  resposta.textContent = bckpResposta;
 }
 
 
@@ -75,16 +76,14 @@ function selectedBall() {
     document.querySelector('.selected').classList.remove('selected');
   }
   if (event.target && event.target.classList.contains('ball')) {
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
   }
 }
 
 window.onload = function () {
-  randomColor();
-  bolaPremiada();
+  bolaPremiada(randomColor());
   colorirBolas();
-  divMae.addEventListener('click', this.mouseEvent)
-  botaoReiniciar.addEventListener('click', this.reiniciarJogo)
-  divMae.addEventListener('click', this.selectedBall)
-}
-
+  divMae.addEventListener('click', mouseEvent);
+  botaoReiniciar.addEventListener('click', reiniciarJogo);
+  divMae.addEventListener('click', selectedBall);
+};
