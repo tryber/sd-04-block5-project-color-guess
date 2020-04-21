@@ -16,7 +16,7 @@ function randomColor() {
   return rColor;
 }
 
-function bolaPremiada(rColor) {
+function bolaPremiada() {
   arrayBolas = [0, 1, 2, 3, 4, 5];
   paragraph.innerHTML = rColor;
   const index = Math.floor(Math.random() * 6);
@@ -81,7 +81,8 @@ function selectedBall() {
 }
 
 window.onload = function () {
-  bolaPremiada(randomColor());
+  randomColor();
+  bolaPremiada();
   colorirBolas();
   divMae.addEventListener('click', mouseEvent);
   botaoReiniciar.addEventListener('click', reiniciarJogo);
