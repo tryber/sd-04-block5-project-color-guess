@@ -57,5 +57,3 @@ function ballsGenerate() {
 window.onload = function() {
   ballsGenerate();
 }
-
-
