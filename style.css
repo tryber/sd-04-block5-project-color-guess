@@ -1,0 +1,23 @@
+.ball {
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.ballColor {
+  height: 100px;
+  width: 100px;
+}
+
+.flexbox {
+  display: flex;
+  width: fit-content;
+}
+
+.ball:hover {
+  box-shadow: 0 0 4px 2px rgba(0, 102, 186, 0.897);
+}
+
+.selected {
+  box-shadow: 0 0 4px 2px rgba(0, 102, 186, 0.897);
+
+}
