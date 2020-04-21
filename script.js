@@ -1,8 +1,10 @@
 let i;
+let score = 0;
 const butReset = document.getElementById('reset-game');
 const elRgbColor = document.getElementById('rgb-color');
 const balls = document.getElementsByClassName('ball');
 const elAnswer = document.getElementById('answer');
+const elScore = document.getElementById('score');
 
 function randomRgb() {
   const randomNumber1 = Math.floor(Math.random() * 257);
@@ -27,13 +29,18 @@ function randomRgbBalls() {
 }
 
 butReset.addEventListener('click', function () {
-  document.location.reload(true);
+  elRgbColor.innerText = randomRgb().slice(3);
+
+  randomRgbBall();
+  randomRgbBalls();
 });
 
 for (i = 0; i < balls.length; i += 1) {
   balls[i].addEventListener('click', function (e) {
     if (e.target.style.backgroundColor.slice(3) === elRgbColor.innerText) {
       elAnswer.innerText = 'Acertou!';
+      score += 3;
+      elScore.innerText = score;
     } else {
       elAnswer.innerText = 'Errou! Tente novamente!';
     }
