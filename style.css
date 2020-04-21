@@ -1,0 +1,14 @@
+body {
+  background-color: thistle;
+  padding: 10px;
+  text-align: center;
+}
+
+.ball {
+  background-color:rgb(23,54,89);
+  border-radius: 50%;
+  display: inline-block;
+  height: 80px;
+  margin: 8px;
+  width: 80px;
+}
