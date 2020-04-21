@@ -1,11 +1,22 @@
 // Gerar cores
 const balls = document.querySelectorAll('.ball');
-const array = [];
+let array = [];
 const answer = document.querySelector('#answer');
+const score = document.querySelector('#score');
+const button = document.querySelector('#reset-game');
+let number = 0;
+
+button.addEventListener('click', function() {
+  array=[];
+  number = 0;
+  ballsGenerate();
+});
+
+let contador = 0;
 
 
 function random() {
-  const number = [Math.floor(Math.random() * (0 + 256)) + 0];
+  number = [Math.floor(Math.random() * (0 + 256)) + 0];
   return number;
 }
 
@@ -26,22 +37,25 @@ function ballsGenerate() {
     textColor.innerHTML = rgbNum; 
 
     for (let i = 0; i < balls.length; i = i + 1) {
-      let contador = 0;
       balls[i].addEventListener('click', function() {
+        
         if ( balls[i].style.backgroundColor == 'rgb'+rgbNum) {
           answer.innerHTML = 'Acertou!';
           contador += 3;
+          score.innerHTML=(contador);
         }
         else {
           answer.innerHTML = ('Errou! Tente novamente!');
         }
+      
       });
     }
+
   }
+
 
 window.onload = function() {
   ballsGenerate();
 }
 
-// const btnReset = document.getElementById('reset-game');
-// btnReset.addEventListener('click',);
+
