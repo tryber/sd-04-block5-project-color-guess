@@ -12,8 +12,8 @@ function randomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
-  const rColor = `(${r}, ${b}, ${g})`;
-  return rColor;
+  rColor = `(${r}, ${b}, ${g})`;
+  return rColor
 }
 
 function bolaPremiada() {
@@ -87,4 +87,5 @@ window.onload = function () {
   divMae.addEventListener('click', mouseEvent);
   botaoReiniciar.addEventListener('click', reiniciarJogo);
   divMae.addEventListener('click', selectedBall);
-};
+}
+
