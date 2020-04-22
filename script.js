@@ -1,3 +1,10 @@
+const textAnswer = document.querySelector('#answer-text');
+const scoreText = document.querySelector('#score-text');
+const divRgb = document.querySelector('#rgb-color');
+const divBalls = document.querySelector('#balls');
+const resetBtn = document.querySelector('#reset-game');
+const clrScoreBtn = document.querySelector('#clear-score');
+
 randomRgb = () => {
   var num = Math.round(0xffffff * Math.random());
   var r = num >> 16;
@@ -12,7 +19,6 @@ check = (element) => {
 }
 
 createCircle = () => {
-  const divBalls = document.querySelector('#balls');
   for (let index = 0; index < 6; index += 1){ 
     const createBalls = document.createElement('span');
     createBalls.addEventListener('click', () => {
@@ -24,13 +30,16 @@ createCircle = () => {
   }  
 }
 
-const resetBtn = document.querySelector('#reset-game');
 resetBtn.addEventListener('click', () => {
-  window.location.reload()
+  cicle();
+});
+
+
+clrScoreBtn.addEventListener('click', () => {
+  scoreText.innerHTML = 0;
 });
 
 getRandomRgb = () => {
-  const divRgb = document.querySelector('#rgb-color');
   const color = document.createElement('p');
   color.className = 'rgbColor';
   const ball = document.querySelectorAll('.ball');
@@ -39,17 +48,21 @@ getRandomRgb = () => {
 }
 
 correctAnswer = () => {
-  const textAnswer = document.querySelector('#answer-text');
   textAnswer.innerHTML = "Acertou!";
-
+  scoreText.innerHTML = parseInt(scoreText.innerHTML, 10) + 3;
+  cicle();
 }
 
 wrongAnswer = () => {
-  const textAnswer = document.querySelector('#answer-text');
   textAnswer.innerHTML = "Errou! Tente novamente!";
 
 }
 
-createCircle();
-getRandomRgb();
+cicle = () => {
+  divRgb.innerHTML = '';
+  divBalls.innerHTML = '';
+  createCircle();
+  getRandomRgb();
+}
+cicle();
 
